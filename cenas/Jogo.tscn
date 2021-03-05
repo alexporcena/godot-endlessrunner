@@ -1,55 +1,30 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/imagens/sky.png" type="Texture" id=1]
-[ext_resource path="res://assets/imagens/cloud.png" type="Texture" id=2]
-[ext_resource path="res://scripts/Background.gd" type="Script" id=3]
-[ext_resource path="res://assets/imagens/mountains.png" type="Texture" id=4]
-[ext_resource path="res://assets/imagens/ground.png" type="Texture" id=5]
+[ext_resource path="res://cenas/Jogador.tscn" type="PackedScene" id=1]
+[ext_resource path="res://cenas/Background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/Jogo.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 24.2065, 10 )
 
 [node name="Jogo" type="Node"]
-
-[node name="Background" type="Node2D" parent="."]
-
-[node name="Sky" type="Sprite" parent="Background"]
-scale = Vector2( 48, 28.8 )
-texture = ExtResource( 1 )
-centered = false
-
-[node name="Cloud1" type="Sprite" parent="Background"]
-texture = ExtResource( 2 )
-centered = false
 script = ExtResource( 3 )
-velocidade = 0.1
 
-[node name="Cloud2" type="Sprite" parent="Background"]
-position = Vector2( 480, 0 )
-texture = ExtResource( 2 )
-centered = false
-script = ExtResource( 3 )
-velocidade = 0.1
+[node name="Background" parent="." instance=ExtResource( 2 )]
 
-[node name="Montanha1" type="Sprite" parent="Background"]
-texture = ExtResource( 4 )
-centered = false
-script = ExtResource( 3 )
-velocidade = 0.15
+[node name="Jogador" parent="." instance=ExtResource( 1 )]
+position = Vector2( 160, 205 )
 
-[node name="Montanha2" type="Sprite" parent="Background"]
-position = Vector2( 480, 0 )
-texture = ExtResource( 4 )
-centered = false
-script = ExtResource( 3 )
-velocidade = 0.15
+[node name="Chao" type="StaticBody2D" parent="."]
+position = Vector2( 150.75, 246.96 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Ground1" type="Sprite" parent="Background"]
-texture = ExtResource( 5 )
-centered = false
-script = ExtResource( 3 )
-velocidade = 5.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chao"]
+shape = SubResource( 1 )
 
-[node name="Ground2" type="Sprite" parent="Background"]
-position = Vector2( 480, 0 )
-texture = ExtResource( 5 )
-centered = false
-script = ExtResource( 3 )
-velocidade = 5.0
+[node name="TimerInimigo" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
+[connection signal="timeout" from="TimerInimigo" to="." method="_on_TimerInimigo_timeout"]

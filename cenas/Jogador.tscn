@@ -1,0 +1,74 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/imagens/jogador.png" type="Texture" id=1]
+[ext_resource path="res://scripts/Jogador.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 192, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 64, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 128, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 192, 64, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "correndo",
+"speed": 8.0
+}, {
+"frames": [ SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "pulando",
+"speed": 2.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "abaixando",
+"speed": 4.0
+} ]
+
+[node name="Jogador" type="KinematicBody2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 9 )
+animation = "pulando"
+playing = true
+
+[node name="CollisionPolygon2DCorrendo" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PoolVector2Array( -12, -32, -12, -28, -16, -28, -16, -24, -20, -24, -20, -16, -24, -16, -24, -8, -20, -8, -20, 4, -28, 4, -28, 8, -32, 8, -32, 16, -28, 16, -28, 20, -24, 20, -24, 32, -16, 32, -16, 24, 4, 24, 4, 32, 12, 32, 12, 16, 16, 16, 16, 20, 20, 20, 20, 16, 16, 14, 16, 8, 8, 8, 8, 4, 16, 4, 16, 0, 20, 0, 20, -24, 16, -24, 16, -28, 12, -28, 12, -32 )
+
+[node name="CollisionPolygon2DAbaixando" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PoolVector2Array( -20, -12, -20, -8, -24, -8, -24, -4, -28, -4, -28, 4, -32, 4, -32, 12, -28, 12, -28, 28, -32, 28, -32, 32, 28, 32, 28, 28, 16, 28, 16, 20, 24, 20, 24, 16, 16, 16, 15, 20, 12, 20, 12, 8, 16, 8, 16, 4, 12, 4, 12, -4, 8, -4, 8, -8, 4, -8, 4, -12 )
+disabled = true
