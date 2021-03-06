@@ -25,3 +25,13 @@ func _ready():
 
 func _physics_process(delta):
 	position.x -= velocidade
+	
+	if position.x < -32:
+		queue_free()
+
+
+func _on_Inimigo_body_entered(body):
+	if body.name == "Jogador":
+		if Global.pontuacao > Global.recorde_pontuacao:
+			Global.recorde_pontuacao = Global.pontuacao
+		get_tree().change_scene("res://cenas/Jogo.tscn")

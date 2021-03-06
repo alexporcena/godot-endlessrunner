@@ -65,10 +65,8 @@ animation = "pulando"
 playing = true
 
 [node name="CollisionPolygon2DCorrendo" type="CollisionPolygon2D" parent="."]
-visible = false
 polygon = PoolVector2Array( -12, -32, -12, -28, -16, -28, -16, -24, -20, -24, -20, -16, -24, -16, -24, -8, -20, -8, -20, 4, -28, 4, -28, 8, -32, 8, -32, 16, -28, 16, -28, 20, -24, 20, -24, 32, -16, 32, -16, 24, 4, 24, 4, 32, 12, 32, 12, 16, 16, 16, 16, 20, 20, 20, 20, 16, 16, 14, 16, 8, 8, 8, 8, 4, 16, 4, 16, 0, 20, 0, 20, -24, 16, -24, 16, -28, 12, -28, 12, -32 )
 
 [node name="CollisionPolygon2DAbaixando" type="CollisionPolygon2D" parent="."]
-visible = false
 polygon = PoolVector2Array( -20, -12, -20, -8, -24, -8, -24, -4, -28, -4, -28, 4, -32, 4, -32, 12, -28, 12, -28, 28, -32, 28, -32, 32, 28, 32, 28, 28, 16, 28, 16, 20, 24, 20, 24, 16, 16, 16, 15, 20, 12, 20, 12, 8, 16, 8, 16, 4, 12, 4, 12, -4, 8, -4, 8, -8, 4, -8, 4, -12 )
 disabled = true

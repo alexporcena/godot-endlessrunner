@@ -5,38 +5,38 @@
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 128, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 1 )
-region = Rect2( 64, 0, 64, 64 )
+region = Rect2( 192, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 1 )
-region = Rect2( 128, 0, 64, 64 )
+region = Rect2( 256, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
-region = Rect2( 192, 0, 64, 64 )
+region = Rect2( 320, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
-region = Rect2( 256, 0, 64, 64 )
+region = Rect2( 0, 0, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 1 )
-region = Rect2( 320, 0, 64, 64 )
+region = Rect2( 64, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ) ],
-"loop": true,
-"name": "passaro",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "homem",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "passaro",
 "speed": 5.0
 } ]
 
@@ -58,3 +58,4 @@ polygon = PoolVector2Array( -20, -32, -20, -28, -24, -28, -24, -24, -28, -24, -2
 [node name="CollisionPolygon2DPassaro" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -20, -20, -20, -16, -32, -16, -32, -12, -28, -12, -28, -8, -32, -8, -32, -4, -20, -4, -20, 0, -8, 0, -8, 16, -4, 16, -4, 20, 0, 20, 0, 24, 16, 24, 16, 28, 28, 28, 28, 24, 17, 24, 16, 23, 16, 20, 20, 20, 20, 16, 24, 16, 24, 4, 28, 4, 28, 0, 32, 0, 32, -4, 28, -4, 28, -24, 24, -24, 24, -20, 16, -20, 16, -16, 12, -16, 12, -12, 8, -12, 8, -8, 4, -8, 4, -4, 0, -4, 0, 0, -4, 0, -4, -16, -8, -16, -8, -20 )
 disabled = true
+[connection signal="body_entered" from="." to="." method="_on_Inimigo_body_entered"]
