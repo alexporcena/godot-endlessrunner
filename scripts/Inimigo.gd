@@ -34,4 +34,4 @@ func _on_Inimigo_body_entered(body):
 	if body.name == "Jogador":
 		if Global.pontuacao > Global.recorde_pontuacao:
 			Global.recorde_pontuacao = Global.pontuacao
-		get_tree().change_scene("res://cenas/Jogo.tscn")
+		get_tree().change_scene("res://interface/GameOver.tscn")

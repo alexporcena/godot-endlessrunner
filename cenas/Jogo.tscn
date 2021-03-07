@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://cenas/Jogador.tscn" type="PackedScene" id=1]
 [ext_resource path="res://cenas/Background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/Jogo.gd" type="Script" id=3]
+[ext_resource path="res://interface/Hud.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.2065, 10 )
@@ -31,5 +32,7 @@ autostart = true
 [node name="TimerPontuacao" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
+
+[node name="Hud" parent="." instance=ExtResource( 4 )]
 [connection signal="timeout" from="TimerInimigo" to="." method="_on_TimerInimigo_timeout"]
 [connection signal="timeout" from="TimerPontuacao" to="." method="_on_TimerPontuacao_timeout"]
