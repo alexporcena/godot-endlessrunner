@@ -9,23 +9,23 @@
 size = 32
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=6]
-font_data = ExtResource( 2 )
-
 [sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 2 )
 
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 64, 64 )
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 2 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
 region = Rect2( 64, 64, 64, 64 )
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ SubResource( 3 ), SubResource( 4 ) ],
+"frames": [ SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -63,7 +63,7 @@ margin_left = -162.5
 margin_top = -47.0
 margin_right = 162.5
 margin_bottom = -27.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "SEU RECORDE É DE X PONTOS"
 __meta__ = {
@@ -79,7 +79,7 @@ margin_left = 75.5
 margin_top = -76.0
 margin_right = 152.5
 margin_bottom = -50.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 text = "JOGAR"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -87,7 +87,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 160, 205 )
-frames = SubResource( 5 )
+frames = SubResource( 6 )
 frame = 1
 playing = true
 [connection signal="pressed" from="Control/ButtonJogo" to="." method="_on_ButtonJogo_pressed"]

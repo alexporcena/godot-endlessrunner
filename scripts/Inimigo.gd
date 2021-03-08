@@ -2,7 +2,7 @@ extends Area2D
 
 const POSICOES_Y = [205, 160]
 
-var velocidade = 5
+var velocidade = 5.0
 var posicao_y = 205
 
 func _ready():

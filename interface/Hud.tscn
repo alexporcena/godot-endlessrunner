@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/fontes/joystix monospace.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/Hud.gd" type="Script" id=2]
+[ext_resource path="res://assets/imagens/up_hover.png" type="Texture" id=3]
+[ext_resource path="res://assets/imagens/up.png" type="Texture" id=4]
+[ext_resource path="res://assets/imagens/down_hover.png" type="Texture" id=5]
+[ext_resource path="res://assets/imagens/down.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -28,3 +32,19 @@ text = "0 PONTOS"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TouchScreenButtonUp" type="TouchScreenButton" parent="."]
+position = Vector2( 32, 176 )
+z_index = 100
+normal = ExtResource( 4 )
+pressed = ExtResource( 3 )
+action = "ui_up"
+visibility_mode = 1
+
+[node name="TouchScreenButtonDown" type="TouchScreenButton" parent="."]
+position = Vector2( 32, 220 )
+z_index = 101
+normal = ExtResource( 6 )
+pressed = ExtResource( 5 )
+action = "ui_down"
+visibility_mode = 1
