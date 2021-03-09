@@ -49,6 +49,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 7 )
 animation = "passaro"
+frame = 1
 playing = true
 
 [node name="CollisionPolygon2DHomem" type="CollisionPolygon2D" parent="."]
