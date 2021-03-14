@@ -46,13 +46,16 @@ __meta__ = {
 [node name="LabelJogo" type="Label" parent="Control"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -162.0
-margin_top = 28.0
-margin_right = 162.0
-margin_bottom = 67.0
+margin_left = -189.0
+margin_top = 26.0
+margin_right = 189.0
+margin_bottom = 65.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "NOME DO JOGO"
+text = "ENDLESS RUNNER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="LabelRecorde" type="Label" parent="Control"]
 anchor_left = 0.5
@@ -88,6 +91,5 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 160, 205 )
 frames = SubResource( 6 )
-frame = 1
 playing = true
 [connection signal="pressed" from="Control/ButtonJogo" to="." method="_on_ButtonJogo_pressed"]
