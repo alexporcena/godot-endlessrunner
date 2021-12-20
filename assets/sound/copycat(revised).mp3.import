@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/copycat(revised).mp3-dc77e0a9f4e4dc4dde57295bdbe035ba.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/copycat(revised).mp3"
+dest_files=[ "res://.import/copycat(revised).mp3-dc77e0a9f4e4dc4dde57295bdbe035ba.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
